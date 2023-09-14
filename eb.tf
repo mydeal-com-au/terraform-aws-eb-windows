@@ -714,7 +714,6 @@ resource "aws_elastic_beanstalk_environment" "env" {
     ignore_changes = [
       cname_prefix,
       version_label,
-      setting,
       solution_stack_name,
       wait_for_ready_timeout
     ]
