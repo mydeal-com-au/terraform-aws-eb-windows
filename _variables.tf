@@ -130,7 +130,7 @@ variable "rolling_update_type" {
 
 variable "deployment_policy" {
   type        = string
-  default     = "Rolling"
+  default     = "AllAtOnce"
   description = "Use the DeploymentPolicy option to set the deployment type. The following values are supported: `AllAtOnce`, `Rolling`, `RollingWithAdditionalBatch`, `Immutable`, `TrafficSplitting`"
 }
 
