@@ -1,5 +1,6 @@
 data "aws_route53_zone" "selected" {
   count = length(var.hostnames) > 0 ? 1 : 0
+  private_zone = var.private_hosted_zone
   name  = var.hosted_zone
 }
 
