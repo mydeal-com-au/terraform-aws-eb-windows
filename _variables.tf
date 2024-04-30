@@ -379,6 +379,11 @@ variable "hosted_zone" {
   description = "Hosted zone to create the hostname"
 }
 
+variable "private_hosted_zone" {
+  default     = false
+  description = "Hosted zone to create the hostname is private"
+}
+
 variable "hostnames" {
   type        = list(string)
   default     = []
