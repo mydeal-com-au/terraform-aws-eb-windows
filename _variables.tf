@@ -611,3 +611,9 @@ variable "solutions_stack_name_regex" {
   default     = ""
   description = "Regex string to apply to the solution stack list returned by AWS"
 }
+
+variable "ssh_source_restriction" {
+  type        = string
+  default     = "10.47.0.0/16"
+  description = "SSH source restriction, defaults to vpc cidr range"
+}

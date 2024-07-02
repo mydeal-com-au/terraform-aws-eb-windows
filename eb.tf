@@ -441,7 +441,7 @@ locals {
     {
       name      = "SSHSourceRestriction"
       namespace = "aws:autoscaling:launchconfiguration"
-      value     = "tcp,22,22,0.0.0.0/0"
+      value     = "tcp,22,22,${var.ssh_source_restriction}"
     },
     {
       name      = "MonitoringInterval"
