@@ -32,3 +32,17 @@ resource "aws_iam_role_policy_attachment" "eb_service" {
   role       = aws_iam_role.eb_service.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkService"
 }
+
+data "aws_iam_policy_document" "eb_ssm_parameters" {
+  statement {
+    effect    = "Allow"
+    actions   = ["ssm:GetParameters"]
+    resources = ["*"]
+  }
+}
+
+resource "aws_iam_role_policy" "eb_ssm_parameters" {
+  name_prefix = "eb-ssm-parameters-${var.environment}-${var.name}-"
+  policy      = data.aws_iam_policy_document.eb_ssm_parameters.json
+  role       = aws_iam_role.eb_service.name
+}
