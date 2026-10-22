@@ -2,6 +2,12 @@ variable "name" {
   description = "Name for this application"
 }
 
+variable "tags" {
+  type        = map(string)
+  default     = {}
+  description = "Tags to apply to the Elastic Beanstalk environment"
+}
+
 variable "description" {
   type        = string
   default     = ""
