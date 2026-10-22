@@ -719,6 +719,8 @@ resource "aws_elastic_beanstalk_environment" "env" {
       wait_for_ready_timeout
     ]
   }
+
+  tags = var.tags
 }
 
 data "aws_elastic_beanstalk_solution_stack" "solution_stack" {
